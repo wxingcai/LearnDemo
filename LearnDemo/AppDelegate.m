@@ -5,6 +5,7 @@
 //  Created by 王兴财 on 2018/2/24.
 //  Copyright © 2018年 wangxingcai. All rights reserved.
 //
+
 /*终端命令：git项目管理
 一、提交本地项目到GitHup步骤：
  1、在githup上创建和本地项目的同名Repository
@@ -38,7 +39,7 @@
  4、在本地修改完代码后、保存所有的项目
     git add .
  5、保存完成后可以提交到本地
-    git commit -m '提交说明'
+    git add . '提交说明'
  6、最后提交git服务器，要加上分支的名字，默认master目录不加。
     git push origin branch1
  */
