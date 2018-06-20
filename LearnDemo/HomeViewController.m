@@ -28,6 +28,7 @@
     [Person run];
     Person *person = [[Person alloc] init];
     [person study];
+    [person test];
     person.address = @"Beijing";
     NSLog(@"person.address = %@", person.address);
     //Block是将函数及其执行上下文封装起来的对象

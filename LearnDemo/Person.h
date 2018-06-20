@@ -15,5 +15,5 @@
 
 + (void)run;
 - (void)study;
-
+- (void)test;
 @end
