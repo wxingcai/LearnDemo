@@ -10,7 +10,6 @@
  1、在githup上创建和本地项目的同名Repository
  2、打开终端 cd到本地项目根目录下，执行git命令
    cd 目录
-   git pull GitHup仓库地址
    git init
  3、将本地项目工作区的所有文件添加到暂存区
    git add .
