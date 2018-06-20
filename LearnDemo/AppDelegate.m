@@ -21,11 +21,27 @@
    那就先输入 git remote rm origin
    再输入 git remote add origin GitHup仓库地址
  6、最后一步，将代码由本地仓库上传到GitHup远程仓库
+   pull --rebase origin master//(不加这句可能报错出现错误的主要原因是github中的README.md文件不在本地代码目录中
+ 　可以通过该命令进行代码合并
    git push -u origin master 第一次提交添加命令参数 -u 确保关联本地库和远程库
    git push origin master    非第一次提交使用此命令即可
  */
 //git 终端上传项目命令步骤: https://www.cnblogs.com/popstar8866/p/6858366.html
-
+/*
+ 1、把git上的代码clone到本地
+    git clone GitHup仓库地址
+ 2、查看远程所有分支
+    git branch -a
+ 3、切换分支  还可以用第2条指令去创建本地分支目录和远程的保持一致，并且切换远程分支到本地分支目录
+    git checkout 分支名称
+    git checkout -b 分支名称1 origin/分支名称1
+ 4、在本地修改完代码后、保存所有的项目
+    git add .
+ 5、保存完成后可以提交到本地
+    git commit -m '提交说明'
+ 6、最后提交git服务器，要加上分支的名字，默认master目录不加。
+    git push origin branch1
+ */
 #import "AppDelegate.h"
 #import "TabBarController.h"
 
