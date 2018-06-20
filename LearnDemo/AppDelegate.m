@@ -39,7 +39,7 @@
  4、在本地修改完代码后、保存所有的项目
     git add .
  5、保存完成后可以提交到本地
-    git add . '提交说明'
+    git commit -m '提交说明'
  6、最后提交git服务器，要加上分支的名字，默认master目录不加。
     git push origin branch1
  */
