@@ -17,6 +17,9 @@
    git commit -m "提交信息..."
  5、将本地仓库关联到GitHup上
    git remote add origin GitHup仓库地址
+   在这一步时如果出现错误：fatal:remote origin already exists
+   那就先输入 git remote rm origin
+   再输入 git remote add origin GitHup仓库地址
  6、最后一步，将代码由本地仓库上传到GitHup远程仓库
    git push -u origin master 第一次提交添加命令参数 -u 确保关联本地库和远程库
    git push origin master    非第一次提交使用此命令即可
