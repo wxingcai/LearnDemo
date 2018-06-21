@@ -18,6 +18,8 @@
 		11322E092040EB9400222061 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11322E082040EB9400222061 /* MyViewController.m */; };
 		114479AD20D25F0F00AD86E0 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 114479AC20D25F0F00AD86E0 /* Person.m */; };
 		114479B020D2622C00AD86E0 /* Person+AddProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 114479AF20D2622C00AD86E0 /* Person+AddProperty.m */; };
+		91239D6E20DBF871006B833D /* 4xGlmmQNGM.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91239D6D20DBF871006B833D /* 4xGlmmQNGM.jpg */; };
+		91239D7120DBF905006B833D /* UIImage+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 91239D7020DBF905006B833D /* UIImage+Common.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,9 @@
 		114479AC20D25F0F00AD86E0 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		114479AE20D2622C00AD86E0 /* Person+AddProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+AddProperty.h"; sourceTree = "<group>"; };
 		114479AF20D2622C00AD86E0 /* Person+AddProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+AddProperty.m"; sourceTree = "<group>"; };
+		91239D6D20DBF871006B833D /* 4xGlmmQNGM.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4xGlmmQNGM.jpg; sourceTree = "<group>"; };
+		91239D6F20DBF905006B833D /* UIImage+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Common.h"; sourceTree = "<group>"; };
+		91239D7020DBF905006B833D /* UIImage+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Common.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +124,8 @@
 				114479AC20D25F0F00AD86E0 /* Person.m */,
 				114479AE20D2622C00AD86E0 /* Person+AddProperty.h */,
 				114479AF20D2622C00AD86E0 /* Person+AddProperty.m */,
+				91239D6F20DBF905006B833D /* UIImage+Common.h */,
+				91239D7020DBF905006B833D /* UIImage+Common.m */,
 				11322DCF2040EA3300222061 /* AppDelegate.h */,
 				11322DD02040EA3300222061 /* AppDelegate.m */,
 				11322E012040EB2A00222061 /* TabBarController.h */,
@@ -126,6 +133,7 @@
 				11322DD82040EA3300222061 /* Assets.xcassets */,
 				11322DDA2040EA3300222061 /* LaunchScreen.storyboard */,
 				11322DDD2040EA3300222061 /* Info.plist */,
+				91239D6D20DBF871006B833D /* 4xGlmmQNGM.jpg */,
 				11322DDE2040EA3300222061 /* main.m */,
 			);
 			path = LearnDemo;
@@ -256,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11322DDC2040EA3300222061 /* LaunchScreen.storyboard in Resources */,
+				91239D6E20DBF871006B833D /* 4xGlmmQNGM.jpg in Resources */,
 				11322DD92040EA3300222061 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91239D7120DBF905006B833D /* UIImage+Common.m in Sources */,
 				11322E092040EB9400222061 /* MyViewController.m in Sources */,
 				114479AD20D25F0F00AD86E0 /* Person.m in Sources */,
 				11322E032040EB2A00222061 /* TabBarController.m in Sources */,
