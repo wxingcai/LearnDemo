@@ -20,6 +20,7 @@
 		114479B020D2622C00AD86E0 /* Person+AddProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 114479AF20D2622C00AD86E0 /* Person+AddProperty.m */; };
 		91239D6E20DBF871006B833D /* 4xGlmmQNGM.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91239D6D20DBF871006B833D /* 4xGlmmQNGM.jpg */; };
 		91239D7120DBF905006B833D /* UIImage+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 91239D7020DBF905006B833D /* UIImage+Common.m */; };
+		91239D7520DD2C7F006B833D /* NoteFile.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 91239D7420DD2C7F006B833D /* NoteFile.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		91239D6D20DBF871006B833D /* 4xGlmmQNGM.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4xGlmmQNGM.jpg; sourceTree = "<group>"; };
 		91239D6F20DBF905006B833D /* UIImage+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Common.h"; sourceTree = "<group>"; };
 		91239D7020DBF905006B833D /* UIImage+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Common.m"; sourceTree = "<group>"; };
+		91239D7420DD2C7F006B833D /* NoteFile.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = NoteFile.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				91239D7020DBF905006B833D /* UIImage+Common.m */,
 				11322DCF2040EA3300222061 /* AppDelegate.h */,
 				11322DD02040EA3300222061 /* AppDelegate.m */,
+				91239D7420DD2C7F006B833D /* NoteFile.rtf */,
 				11322E012040EB2A00222061 /* TabBarController.h */,
 				11322E022040EB2A00222061 /* TabBarController.m */,
 				11322DD82040EA3300222061 /* Assets.xcassets */,
@@ -265,6 +268,7 @@
 			files = (
 				11322DDC2040EA3300222061 /* LaunchScreen.storyboard in Resources */,
 				91239D6E20DBF871006B833D /* 4xGlmmQNGM.jpg in Resources */,
+				91239D7520DD2C7F006B833D /* NoteFile.rtf in Resources */,
 				11322DD92040EA3300222061 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
