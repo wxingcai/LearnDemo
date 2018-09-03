@@ -8,7 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Person : NSObject
+typedef void(^SayHello)(void);
+
+@protocol MyDelegate <NSObject>
+@required
+- (void)eat:(NSString *)foodName;
+@optional
+- (void)run;
+@end
+
+@interface Person : NSObject<MyDelegate>
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, assign) int age;

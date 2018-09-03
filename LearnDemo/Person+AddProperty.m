@@ -19,8 +19,4 @@
     return objc_getAssociatedObject(self, "address");
 }
 
-- (NSString *)description{
-    return NSStringFromSelector(_cmd);
-}
-
 @end

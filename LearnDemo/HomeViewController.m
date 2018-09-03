@@ -9,7 +9,7 @@
 #import "HomeViewController.h"
 #import "Person.h"
 #import "Person+AddProperty.h"
-#import <objc/runtime.h>
+#import <objc/message.h>
 @interface HomeViewController ()
 
 @end
@@ -21,14 +21,12 @@
     self.title = @"首页";
     self.view.backgroundColor = [UIColor whiteColor];
     
-    Method runMethod = class_getClassMethod([Person class], @selector(run));
-    Method studyMethod = class_getInstanceMethod([Person class], @selector(study));
-    method_exchangeImplementations(runMethod, studyMethod);
-    
     [Person run];
     Person *person = [[Person alloc] init];
     [person study];
     [person test];
+    [person eat:@"汉堡"];
+    [person run];
     person.address = @"Beijing";
     NSLog(@"person.address = %@", person.address);
     //Block是将函数及其执行上下文封装起来的对象
@@ -54,13 +52,25 @@
         
         NSLog(@"%s---%s", name, type);
     }
+    // 交换两个方法中的IMP
+    Method runMethod = class_getClassMethod([Person class], @selector(run));
+    Method studyMethod = class_getInstanceMethod([Person class], @selector(study));
+    method_exchangeImplementations(runMethod, studyMethod);
+    [Person run];
+    [person study];
+    
+    // 修改某个方法的IMP
     //class_replaceMethod([self class], @selector(viewDidLoad), (IMP)ttt, "v@:");
+    // 设置某个方法的IMP
     method_setImplementation(class_getInstanceMethod([self class], @selector(viewDidLoad)), (IMP)ttt);
     [self viewDidLoad];
+    // 归根结底，都是偷换了selector的IMP
+    
+    //_objc_msgForward();
 }
 
 void ttt(id self,SEL _cmd){
-    NSLog(@"%@",NSStringFromSelector(_cmd));
+    NSLog(@"修改/设置%@的IMP",NSStringFromSelector(_cmd));
 }
 
 - (void)didReceiveMemoryWarning {

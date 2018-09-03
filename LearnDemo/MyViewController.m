@@ -10,18 +10,35 @@
 #import "Person.h"
 #import "UIImage+Common.h"
 
+typedef int(^MyBlock)(int, int);
+
 @interface MyViewController ()
 
 @end
 
 @implementation MyViewController
 
+- (void)createUI{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(40, 490, 80, 80);
+    btn.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:btn];
+    [btn addTarget:self action:@selector(press) forControlEvents:UIControlEventTouchUpInside];
+    
+    UILabel *view = [[UILabel alloc]initWithFrame:CGRectMake(40, 490, 80, 80)];
+    view.backgroundColor = [UIColor brownColor];
+    [self.view addSubview:view];
+}
+
+- (void)press{
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"我的";
-    
-    NSLog(@"%@", [[[Person alloc] init] description]);
+    [self createUI];
     /*NSLog(@"1");
     dispatch_sync(dispatch_get_main_queue(), ^{
         NSLog(@"2");
@@ -39,7 +56,56 @@
     imageView.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     [self.view addSubview:imageView];
+    
+    void (^aBlock)(NSString *x, NSString *y);
+    void (^bBlock)(NSString *, NSString *);
+    
+    bBlock = ^(NSString *x, NSString *y){
+        NSLog(@"%@ love %@", x,y);
+    };
+    
+    int (^myBlock)(int) = ^(int num){
+        return num*7;
+    };
+    
+    void (^aVoidBlock)(void) = ^{
+        NSLog(@"I am a aVoidBlock");
+    };
+    
+    bBlock(@"Li Lei", @"Han Meimei");
+    NSLog(@"result = %d", myBlock(9));
+    aVoidBlock();
+    SayHello hello = ^(){
+        NSLog(@"hello");
+    };
+    hello();
+    MyBlock addBlock = ^(int x, int y){
+        return x + y;
+    };
+    useBlockForC(addBlock);
+    useBlockForC(^(int x, int y) {
+        return x + y;
+    });
+    [self useBlockForOC:addBlock];
+    [self useBlockForOC:^int(int x, int y) {
+        return x + y;
+    }];
+    
+    static int globl = 100;
+    void(^yBlock)(void) = ^{
+        globl++;
+        NSLog(@"%d", globl);
+    };
+    yBlock();
     // Do any additional setup after loading the view.
+}
+
+void useBlockForC(int(^aBlock)(int, int)){
+     NSLog(@"result = %d", aBlock(300,200));
+}
+
+- (void)useBlockForOC:(MyBlock)aBlock{
+    NSLog(@"result = %d", aBlock(300,200));
 }
 
 - (void)didReceiveMemoryWarning {
