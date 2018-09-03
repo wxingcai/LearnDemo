@@ -18,6 +18,10 @@
 		11322E092040EB9400222061 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11322E082040EB9400222061 /* MyViewController.m */; };
 		114479AD20D25F0F00AD86E0 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 114479AC20D25F0F00AD86E0 /* Person.m */; };
 		114479B020D2622C00AD86E0 /* Person+AddProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 114479AF20D2622C00AD86E0 /* Person+AddProperty.m */; };
+		1161BE93213D129D00B06559 /* NSObject+Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 1161BE92213D129D00B06559 /* NSObject+Model.m */; };
+		1161BE96213D15BB00B06559 /* CourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1161BE95213D15BB00B06559 /* CourseModel.m */; };
+		1161BE99213D246E00B06559 /* CourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1161BE98213D246E00B06559 /* CourseTableViewCell.m */; };
+		71267602B8C2EFECA891DBB2 /* Pods_LearnDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDB6FB3DA30BBB7615329A /* Pods_LearnDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,16 @@
 		114479AC20D25F0F00AD86E0 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		114479AE20D2622C00AD86E0 /* Person+AddProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+AddProperty.h"; sourceTree = "<group>"; };
 		114479AF20D2622C00AD86E0 /* Person+AddProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+AddProperty.m"; sourceTree = "<group>"; };
+		1161BE90213CD78E00B06559 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		1161BE91213D129D00B06559 /* NSObject+Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Model.h"; sourceTree = "<group>"; };
+		1161BE92213D129D00B06559 /* NSObject+Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Model.m"; sourceTree = "<group>"; };
+		1161BE94213D15BB00B06559 /* CourseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CourseModel.h; sourceTree = "<group>"; };
+		1161BE95213D15BB00B06559 /* CourseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CourseModel.m; sourceTree = "<group>"; };
+		1161BE97213D246E00B06559 /* CourseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CourseTableViewCell.h; sourceTree = "<group>"; };
+		1161BE98213D246E00B06559 /* CourseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CourseTableViewCell.m; sourceTree = "<group>"; };
+		139EBADFEBF7404EDC5530AB /* Pods-LearnDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LearnDemo/Pods-LearnDemo.release.xcconfig"; sourceTree = "<group>"; };
+		2C3067E6B6601911FED950D3 /* Pods-LearnDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LearnDemo/Pods-LearnDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		3EDDB6FB3DA30BBB7615329A /* Pods_LearnDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearnDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71267602B8C2EFECA891DBB2 /* Pods_LearnDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +110,8 @@
 				11322DE72040EA3300222061 /* LearnDemoTests */,
 				11322DF22040EA3300222061 /* LearnDemoUITests */,
 				11322DCD2040EA3300222061 /* Products */,
+				80D55F2FC4F7CEACCA9E83AC /* Pods */,
+				F01AAB58F85837E5C4AAFD4E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,8 +132,14 @@
 				11322E052040EB5F00222061 /* HomeViewController.m */,
 				11322E072040EB9400222061 /* MyViewController.h */,
 				11322E082040EB9400222061 /* MyViewController.m */,
+				1161BE97213D246E00B06559 /* CourseTableViewCell.h */,
+				1161BE98213D246E00B06559 /* CourseTableViewCell.m */,
 				114479AB20D25F0F00AD86E0 /* Person.h */,
 				114479AC20D25F0F00AD86E0 /* Person.m */,
+				1161BE94213D15BB00B06559 /* CourseModel.h */,
+				1161BE95213D15BB00B06559 /* CourseModel.m */,
+				1161BE91213D129D00B06559 /* NSObject+Model.h */,
+				1161BE92213D129D00B06559 /* NSObject+Model.m */,
 				114479AE20D2622C00AD86E0 /* Person+AddProperty.h */,
 				114479AF20D2622C00AD86E0 /* Person+AddProperty.m */,
 				11322DCF2040EA3300222061 /* AppDelegate.h */,
@@ -127,6 +150,7 @@
 				11322DDA2040EA3300222061 /* LaunchScreen.storyboard */,
 				11322DDD2040EA3300222061 /* Info.plist */,
 				11322DDE2040EA3300222061 /* main.m */,
+				1161BE90213CD78E00B06559 /* PrefixHeader.pch */,
 			);
 			path = LearnDemo;
 			sourceTree = "<group>";
@@ -149,6 +173,23 @@
 			path = LearnDemoUITests;
 			sourceTree = "<group>";
 		};
+		80D55F2FC4F7CEACCA9E83AC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2C3067E6B6601911FED950D3 /* Pods-LearnDemo.debug.xcconfig */,
+				139EBADFEBF7404EDC5530AB /* Pods-LearnDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F01AAB58F85837E5C4AAFD4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3EDDB6FB3DA30BBB7615329A /* Pods_LearnDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,9 +197,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11322DF82040EA3300222061 /* Build configuration list for PBXNativeTarget "LearnDemo" */;
 			buildPhases = (
+				3BA92ECE05B46ADA09ABC290 /* [CP] Check Pods Manifest.lock */,
 				11322DC82040EA3300222061 /* Sources */,
 				11322DC92040EA3300222061 /* Frameworks */,
 				11322DCA2040EA3300222061 /* Resources */,
+				79A60179B0F785B28312EADB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -276,18 +319,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3BA92ECE05B46ADA09ABC290 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LearnDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79A60179B0F785B28312EADB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LearnDemo/Pods-LearnDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LearnDemo/Pods-LearnDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		11322DC82040EA3300222061 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1161BE99213D246E00B06559 /* CourseTableViewCell.m in Sources */,
 				11322E092040EB9400222061 /* MyViewController.m in Sources */,
 				114479AD20D25F0F00AD86E0 /* Person.m in Sources */,
+				1161BE96213D15BB00B06559 /* CourseModel.m in Sources */,
 				11322E032040EB2A00222061 /* TabBarController.m in Sources */,
 				11322DDF2040EA3300222061 /* main.m in Sources */,
 				11322E062040EB5F00222061 /* HomeViewController.m in Sources */,
 				11322DD12040EA3300222061 /* AppDelegate.m in Sources */,
 				114479B020D2622C00AD86E0 /* Person+AddProperty.m in Sources */,
+				1161BE93213D129D00B06559 /* NSObject+Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,31 +527,39 @@
 		};
 		11322DF92040EA3300222061 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C3067E6B6601911FED950D3 /* Pods-LearnDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8U7BA7Q36N;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = LearnDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = LearnDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fhsx.LearnDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Debug;
 		};
 		11322DFA2040EA3300222061 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 139EBADFEBF7404EDC5530AB /* Pods-LearnDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8U7BA7Q36N;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = LearnDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = LearnDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fhsx.LearnDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Release;
 		};

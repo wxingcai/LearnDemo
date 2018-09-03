@@ -18,9 +18,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"首页";
+    self.title = @"主页";
     self.view.backgroundColor = [UIColor whiteColor];
     
+    UIView *redView = [[UIView alloc]init];
+    redView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:redView];
+    
+    UIView *blueView = [[UIView alloc]init];
+    blueView.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:blueView];
+    
+    [redView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).with.offset(15);
+        make.right.equalTo(blueView.mas_left).mas_offset(-30);
+        make.top.equalTo(self.view).with.offset(100);
+        make.height.mas_equalTo(100);
+    }];
+    
+    [blueView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.view).with.offset(-15);
+        make.top.equalTo(self.view).with.offset(100);
+        make.height.equalTo(redView);
+        make.width.equalTo(redView);
+        
+    }];
+
     Method runMethod = class_getClassMethod([Person class], @selector(run));
     Method studyMethod = class_getInstanceMethod([Person class], @selector(study));
     method_exchangeImplementations(runMethod, studyMethod);
