@@ -12,8 +12,6 @@
 
 typedef int(^MyBlock)(int, int);
 
-@interface MyViewController ()
-
 @interface MyViewController ()<UITableViewDataSource>
 {
     NSInteger currentpage;
