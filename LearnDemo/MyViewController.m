@@ -14,6 +14,12 @@ typedef int(^MyBlock)(int, int);
 
 @interface MyViewController ()
 
+@interface MyViewController ()<UITableViewDataSource>
+{
+    NSInteger currentpage;
+    NSMutableArray *courseList;
+    UITableView *listTable;
+}
 @end
 
 @implementation MyViewController
@@ -49,6 +55,7 @@ typedef int(^MyBlock)(int, int);
     // 如何高性能的给 UIImageView 加个圆角?
     //使用了贝塞尔曲线"切割"这个图片, 给UIImageView 添加了的圆角，其实也是通过绘图技术来实现的
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(85, 100, self.view.bounds.size.width - 170, 380)];
+    imageView.backgroundColor = [UIColor cyanColor];
     UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, NO, 1.0);
     [[UIBezierPath bezierPathWithRoundedRect:imageView.bounds cornerRadius:12] addClip];
     UIImage *image = [UIImage imageNamed:@"4xGlmmQNGM.jpg"];
