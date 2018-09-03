@@ -28,9 +28,11 @@
     
     listTable = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
     listTable.dataSource = self;
+    listTable.backgroundColor = [UIColor clearColor];
+    listTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     listTable.rowHeight = UITableViewAutomaticDimension;
     [self.view addSubview:listTable];
-    
+
     [listTable mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
@@ -48,13 +50,14 @@
     // 如何高性能的给 UIImageView 加个圆角?
     //使用了贝塞尔曲线"切割"这个图片, 给UIImageView 添加了的圆角，其实也是通过绘图技术来实现的
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(85, 100, self.view.bounds.size.width - 170, 380)];
+    imageView.backgroundColor = [UIColor cyanColor];
     UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, NO, 1.0);
     [[UIBezierPath bezierPathWithRoundedRect:imageView.bounds cornerRadius:12] addClip];
     UIImage *image = [UIImage imageNamed:@"4xGlmmQNGM.jpg"];
     [image drawInRect:imageView.bounds];
     imageView.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    [self.view addSubview:imageView];
+    [self.view insertSubview:imageView belowSubview:listTable];
     // Do any additional setup after loading the view.
 }
 

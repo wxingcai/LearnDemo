@@ -19,7 +19,7 @@
     [super viewDidLoad];
     
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont   systemFontOfSize:12]} forState:UIControlStateNormal];
-    [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -8)];
+    [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -5)];
     HomeViewController * homeVC = [[HomeViewController alloc]init];
     UINavigationController *homeNavi = [[UINavigationController alloc]initWithRootViewController:homeVC];
     homeNavi.title = @"主页";

@@ -39,13 +39,24 @@
             make.right.equalTo(self.contentView).with.mas_offset(-8);
             make.height.greaterThanOrEqualTo(@20);
         }];
+        
+        UIView *lineView = [[UIView alloc]init];
+        lineView.backgroundColor = [[UIColor lightGrayColor]colorWithAlphaComponent:0.4];
+        [self.contentView addSubview:lineView];
+        
+        [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.contentView).with.offset(124);
+            make.bottom.equalTo(self.contentView).with.offset(0);
+            make.right.equalTo(self.contentView).with.mas_offset(0);
+            make.height.mas_equalTo(0.5);
+        }];
     }
     return self;
 }
 
 - (void)updateCellData:(CourseModel *)courseModel{
     
-    NSString * imageName = [NSString stringWithFormat:@"http://file.schooledu.com.cn/static/%@", courseModel.image];
+    NSString *imageName = [NSString stringWithFormat:@"http://file.schooledu.com.cn/static/%@", courseModel.image];
     [_imgView  sd_setImageWithURL:[NSURL URLWithString:imageName]];
     
     _titleLbl.text = courseModel.cName;
