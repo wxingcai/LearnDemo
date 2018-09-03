@@ -77,6 +77,13 @@
         
         NSLog(@"%s---%s", name, type);
     }
+    //class_replaceMethod([self class], @selector(viewDidLoad), (IMP)ttt, "v@:");
+    method_setImplementation(class_getInstanceMethod([self class], @selector(viewDidLoad)), (IMP)ttt);
+    [self viewDidLoad];
+}
+
+void ttt(id self,SEL _cmd){
+    NSLog(@"%@",NSStringFromSelector(_cmd));
 }
 
 - (void)didReceiveMemoryWarning {

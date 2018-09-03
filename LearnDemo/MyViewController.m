@@ -38,6 +38,23 @@
     courseList = [[NSMutableArray alloc]init];
     [self request];
     NSLog(@"%@", [[[Person alloc] init] description]);
+    /*NSLog(@"1");
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        NSLog(@"2");
+    });
+    NSLog(@"3");
+     */
+    // 只输出：1.原因：主线程死锁
+    // 如何高性能的给 UIImageView 加个圆角?
+    //使用了贝塞尔曲线"切割"这个图片, 给UIImageView 添加了的圆角，其实也是通过绘图技术来实现的
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(85, 100, self.view.bounds.size.width - 170, 380)];
+    UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, NO, 1.0);
+    [[UIBezierPath bezierPathWithRoundedRect:imageView.bounds cornerRadius:12] addClip];
+    UIImage *image = [UIImage imageNamed:@"4xGlmmQNGM.jpg"];
+    [image drawInRect:imageView.bounds];
+    imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    [self.view addSubview:imageView];
     // Do any additional setup after loading the view.
 }
 
