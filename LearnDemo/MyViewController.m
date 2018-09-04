@@ -8,8 +8,9 @@
 
 #import "MyViewController.h"
 #import "Person.h"
-#import "CourseModel.h"
-#import "CourseTableViewCell.h"
+#import "UIImage+Common.h"
+
+typedef int(^MyBlock)(int, int);
 
 @interface MyViewController ()<UITableViewDataSource>
 {
@@ -21,25 +22,27 @@
 
 @implementation MyViewController
 
+- (void)createUI{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(40, 490, 80, 80);
+    btn.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:btn];
+    [btn addTarget:self action:@selector(press) forControlEvents:UIControlEventTouchUpInside];
+    
+    UILabel *view = [[UILabel alloc]initWithFrame:CGRectMake(40, 490, 80, 80)];
+    view.backgroundColor = [UIColor brownColor];
+    [self.view addSubview:view];
+}
+
+- (void)press{
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"我的";
-    
-    listTable = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
-    listTable.dataSource = self;
-    listTable.backgroundColor = [UIColor clearColor];
-    listTable.separatorStyle = UITableViewCellSeparatorStyleNone;
-    listTable.rowHeight = UITableViewAutomaticDimension;
-    [self.view addSubview:listTable];
-
-    [listTable mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
-    currentpage = 1;
-    courseList = [[NSMutableArray alloc]init];
-    [self request];
-    NSLog(@"%@", [[[Person alloc] init] description]);
+    [self createUI];
     /*NSLog(@"1");
     dispatch_sync(dispatch_get_main_queue(), ^{
         NSLog(@"2");
@@ -57,45 +60,57 @@
     [image drawInRect:imageView.bounds];
     imageView.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    [self.view insertSubview:imageView belowSubview:listTable];
+    [self.view addSubview:imageView];
+    
+    void (^aBlock)(NSString *x, NSString *y);
+    void (^bBlock)(NSString *, NSString *);
+    
+    bBlock = ^(NSString *x, NSString *y){
+        NSLog(@"%@ love %@", x,y);
+    };
+    
+    int (^myBlock)(int) = ^(int num){
+        return num*7;
+    };
+    
+    void (^aVoidBlock)(void) = ^{
+        NSLog(@"I am a aVoidBlock");
+    };
+    
+    bBlock(@"Li Lei", @"Han Meimei");
+    NSLog(@"result = %d", myBlock(9));
+    aVoidBlock();
+    SayHello hello = ^(){
+        NSLog(@"hello");
+    };
+    hello();
+    MyBlock addBlock = ^(int x, int y){
+        return x + y;
+    };
+    useBlockForC(addBlock);
+    useBlockForC(^(int x, int y) {
+        return x + y;
+    });
+    [self useBlockForOC:addBlock];
+    [self useBlockForOC:^int(int x, int y) {
+        return x + y;
+    }];
+    
+    static int globl = 100;
+    void(^yBlock)(void) = ^{
+        globl++;
+        NSLog(@"%d", globl);
+    };
+    yBlock();
     // Do any additional setup after loading the view.
 }
 
-- (void)request{
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURL *url = [NSURL URLWithString:@"http://101.201.38.203/rest/course/getCourseList"];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    request.HTTPMethod = @"POST";
-    NSString *str = [NSString stringWithFormat:@"page=%li",currentpage];
-    request.HTTPBody = [str dataUsingEncoding:NSUTF8StringEncoding];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        
-        NSDictionary *dict=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-        NSArray *array = dict[@"data"];
-        for (NSDictionary *dic in array){
-            CourseModel *courseModel = [CourseModel modelWithDict:dic];
-            [courseList addObject:courseModel];
-        }
-        //回到主线程刷新UI
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [listTable reloadData];
-        });
-    }];
-    [dataTask resume];
+void useBlockForC(int(^aBlock)(int, int)){
+     NSLog(@"result = %d", aBlock(300,200));
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return courseList.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *string = @"CourseCell";
-    CourseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:string];
-    if (cell == nil) {
-        cell = [[CourseTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:string];
-    }
-    [cell updateCellData:courseList[indexPath.row]];
-    return cell;
+- (void)useBlockForOC:(MyBlock)aBlock{
+    NSLog(@"result = %d", aBlock(300,200));
 }
 
 - (void)didReceiveMemoryWarning {

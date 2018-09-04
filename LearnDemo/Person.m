@@ -10,12 +10,20 @@
 
 @implementation Person
 
+- (void)eat:(NSString *)foodName{
+    NSLog(@"吃:%@!", foodName);
+}
+
+- (void)run{
+    NSLog(@"run");
+}
+
 + (void)run{
-    NSLog(@"run....");
+    NSLog(@"run....%@", self);
 }
 
 - (void)study{
-    NSLog(@"study....");
+    NSLog(@"study....%@", self);
 }
 
 + (BOOL)resolveInstanceMethod:(SEL)sel{
