@@ -19,7 +19,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"主页";
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor lightGrayColor];
+    
+    UIView *redView = [[UIView alloc]init];
+    redView.backgroundColor = [[UIColor cyanColor]colorWithAlphaComponent:0.6];
+    [self.view addSubview:redView];
+    [redView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(50);
+        make.right.mas_equalTo(-50);
+        make.top.mas_equalTo(94);
+        make.height.mas_equalTo(150);
+    }];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 指定更新size，其他约束不变。
+        [UIView animateWithDuration:0 animations:^{
+            [redView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.left.mas_equalTo(90);
+                make.right.mas_equalTo(-90);
+                make.height.mas_equalTo(130);
+            }];
+        }];
+    });
     
     [Person run];
     Person *person = [[Person alloc] init];
