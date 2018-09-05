@@ -17,6 +17,9 @@ typedef int(^MyBlock)(int, int);
     NSInteger currentpage;
     NSMutableArray *courseList;
     UITableView *listTable;
+    
+    UIScrollView *backScroll;
+    UIImageView *imageView;
 }
 @end
 
@@ -25,26 +28,52 @@ typedef int(^MyBlock)(int, int);
 - (void)createUI{
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.backgroundColor = [UIColor blueColor];
-    [self.view addSubview:btn];
+    [backScroll addSubview:btn];
     [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(90);
-        make.left.mas_equalTo(80);
+        make.top.mas_equalTo(26);
+        make.left.mas_equalTo(40);
         make.height.mas_equalTo(80);
     }];
     [btn addTarget:self action:@selector(press) forControlEvents:UIControlEventTouchUpInside];
     
     UILabel *view = [[UILabel alloc]init];
     view.backgroundColor = [UIColor brownColor];
-    [self.view addSubview:view];
+    [backScroll addSubview:view];
     
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(btn.mas_top);
         make.left.mas_equalTo(btn.mas_right).offset(10);
-        make.right.mas_equalTo(-80);
+        make.right.mas_equalTo(-40);
         make.height.mas_equalTo(80);
         make.width.mas_equalTo(btn.mas_width);
     
     }];
+    
+    imageView = [[UIImageView alloc]init];
+    [backScroll addSubview:imageView];
+    
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(view.mas_bottom).with.offset(10);
+        make.left.mas_equalTo(40);
+        make.right.mas_equalTo(-40);
+        make.bottom.mas_equalTo(-26);
+    }];
+    
+}
+
+- (void)viewWillLayoutSubviews{
+    
+    CGRect rectframe = CGRectMake(0, 0, self.view.bounds.size.width - 80, self.view.bounds.size.height - 206);
+    if (imageView.bounds.size.height) {
+        rectframe = CGRectMake(0, 0, self.view.bounds.size.width - 80, imageView.bounds.size.height);
+    }
+    UIGraphicsBeginImageContextWithOptions(rectframe.size, NO, 1.0);
+    [[UIBezierPath bezierPathWithRoundedRect:rectframe cornerRadius:12] addClip];
+    UIImage *image = [UIImage imageNamed:@"696543.jpeg"];
+    [image drawInRect:rectframe];
+    imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
 }
 
 - (void)press{
@@ -55,7 +84,15 @@ typedef int(^MyBlock)(int, int);
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"我的";
+    backScroll = [[UIScrollView alloc]init];
+    backScroll.contentSize = CGSizeMake(1000, 1000);
+    [self.view addSubview:backScroll];
+    [backScroll mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
     [self createUI];
+    
+    currentpage = 1;
     /*NSLog(@"1");
     dispatch_sync(dispatch_get_main_queue(), ^{
         NSLog(@"2");
@@ -65,22 +102,6 @@ typedef int(^MyBlock)(int, int);
     // 只输出：1.原因：主线程死锁
     // 如何高性能的给 UIImageView 加个圆角?
     //使用了贝塞尔曲线"切割"这个图片, 给UIImageView 添加了的圆角，其实也是通过绘图技术来实现的
-    UIImageView *imageView = [[UIImageView alloc]init];
-    imageView.backgroundColor = [UIColor cyanColor];
-    [self.view addSubview:imageView];
-    
-    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(180);
-        make.left.mas_equalTo(80);
-        make.right.mas_equalTo(-80);
-        make.bottom.mas_equalTo(-89);
-    }];
-    UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, NO, 1.0);
-    [[UIBezierPath bezierPathWithRoundedRect:imageView.bounds cornerRadius:12] addClip];
-    UIImage *image = [UIImage imageNamed:@"4xGlmmQNGM.jpg"];
-    [image drawInRect:imageView.bounds];
-    imageView.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
     
     void (^aBlock)(NSString *x, NSString *y);
     void (^bBlock)(NSString *, NSString *);
