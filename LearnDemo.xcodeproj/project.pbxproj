@@ -21,7 +21,6 @@
 		1161BE93213D129D00B06559 /* NSObject+Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 1161BE92213D129D00B06559 /* NSObject+Model.m */; };
 		1161BE96213D15BB00B06559 /* CourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1161BE95213D15BB00B06559 /* CourseModel.m */; };
 		1161BE99213D246E00B06559 /* CourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1161BE98213D246E00B06559 /* CourseTableViewCell.m */; };
-		116758AC213FB4A300E9D11F /* 696543.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 116758AB213FB4A300E9D11F /* 696543.jpeg */; };
 		71267602B8C2EFECA891DBB2 /* Pods_LearnDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDB6FB3DA30BBB7615329A /* Pods_LearnDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,7 +72,6 @@
 		1161BE95213D15BB00B06559 /* CourseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CourseModel.m; sourceTree = "<group>"; };
 		1161BE97213D246E00B06559 /* CourseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CourseTableViewCell.h; sourceTree = "<group>"; };
 		1161BE98213D246E00B06559 /* CourseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CourseTableViewCell.m; sourceTree = "<group>"; };
-		116758AB213FB4A300E9D11F /* 696543.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 696543.jpeg; path = ../../../Downloads/696543.jpeg; sourceTree = "<group>"; };
 		139EBADFEBF7404EDC5530AB /* Pods-LearnDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LearnDemo/Pods-LearnDemo.release.xcconfig"; sourceTree = "<group>"; };
 		2C3067E6B6601911FED950D3 /* Pods-LearnDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LearnDemo/Pods-LearnDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		3EDDB6FB3DA30BBB7615329A /* Pods_LearnDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearnDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,7 +149,6 @@
 				11322DD82040EA3300222061 /* Assets.xcassets */,
 				11322DDA2040EA3300222061 /* LaunchScreen.storyboard */,
 				11322DDD2040EA3300222061 /* Info.plist */,
-				116758AB213FB4A300E9D11F /* 696543.jpeg */,
 				11322DDE2040EA3300222061 /* main.m */,
 				1161BE90213CD78E00B06559 /* PrefixHeader.pch */,
 			);
@@ -303,7 +300,6 @@
 			files = (
 				11322DDC2040EA3300222061 /* LaunchScreen.storyboard in Resources */,
 				11322DD92040EA3300222061 /* Assets.xcassets in Resources */,
-				116758AC213FB4A300E9D11F /* 696543.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
