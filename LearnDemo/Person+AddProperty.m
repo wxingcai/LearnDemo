@@ -19,4 +19,15 @@
     return objc_getAssociatedObject(self, "address");
 }
 
++ (void)load{
+    Method runMethod = class_getInstanceMethod([self class], @selector(run));
+    Method toMethod = class_getInstanceMethod([self class], @selector(swizzlingRun));
+    method_exchangeImplementations(runMethod, toMethod);
+}
+
+- (void)swizzlingRun{
+    NSLog(@"swizzlingRun");
+    [self swizzlingRun];
+}
+
 @end

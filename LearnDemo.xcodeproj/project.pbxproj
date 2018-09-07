@@ -142,17 +142,13 @@
 				1161BE92213D129D00B06559 /* NSObject+Model.m */,
 				114479AE20D2622C00AD86E0 /* Person+AddProperty.h */,
 				114479AF20D2622C00AD86E0 /* Person+AddProperty.m */,
-				91239D6F20DBF905006B833D /* UIImage+Common.h */,
-				91239D7020DBF905006B833D /* UIImage+Common.m */,
 				11322DCF2040EA3300222061 /* AppDelegate.h */,
 				11322DD02040EA3300222061 /* AppDelegate.m */,
-				91239D7420DD2C7F006B833D /* NoteFile.rtf */,
 				11322E012040EB2A00222061 /* TabBarController.h */,
 				11322E022040EB2A00222061 /* TabBarController.m */,
 				11322DD82040EA3300222061 /* Assets.xcassets */,
 				11322DDA2040EA3300222061 /* LaunchScreen.storyboard */,
 				11322DDD2040EA3300222061 /* Info.plist */,
-				91239D6D20DBF871006B833D /* 4xGlmmQNGM.jpg */,
 				11322DDE2040EA3300222061 /* main.m */,
 				1161BE90213CD78E00B06559 /* PrefixHeader.pch */,
 			);
@@ -303,8 +299,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				11322DDC2040EA3300222061 /* LaunchScreen.storyboard in Resources */,
-				91239D6E20DBF871006B833D /* 4xGlmmQNGM.jpg in Resources */,
-				91239D7520DD2C7F006B833D /* NoteFile.rtf in Resources */,
 				11322DD92040EA3300222061 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
