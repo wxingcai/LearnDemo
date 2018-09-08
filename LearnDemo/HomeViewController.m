@@ -8,9 +8,16 @@
 
 #import "HomeViewController.h"
 #import "Person.h"
+#import "CourseModel.h"
+#import "CourseTableViewCell.h"
 #import "Person+AddProperty.h"
 #import <objc/message.h>
-@interface HomeViewController ()
+@interface HomeViewController ()<UITableViewDataSource>
+{
+    NSInteger currentpage;
+    NSMutableArray *courseList;
+    UITableView *listTable;
+}
 
 @end
 
@@ -19,28 +26,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"主页";
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
-    UIView *redView = [[UIView alloc]init];
-    redView.backgroundColor = [[UIColor cyanColor]colorWithAlphaComponent:0.6];
-    [self.view addSubview:redView];
-    [redView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(50);
-        make.right.mas_equalTo(-50);
-        make.top.mas_equalTo(94);
-        make.height.mas_equalTo(150);
+    currentpage = 1;
+    courseList = [[NSMutableArray alloc]init];
+    listTable = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+    listTable.dataSource = self;
+    listTable.rowHeight = UITableViewAutomaticDimension;
+    listTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.view addSubview:listTable];
+    
+    [listTable mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
     }];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        // 指定更新size，其他约束不变。
-        [UIView animateWithDuration:0 animations:^{
-            [redView mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.left.mas_equalTo(90);
-                make.right.mas_equalTo(-90);
-                make.height.mas_equalTo(130);
-            }];
-        }];
-    });
+    [self requestCourseList];
     
     [Person run];
     Person *person = [[Person alloc] init];
@@ -92,6 +91,36 @@
 
 void ttt(id self,SEL _cmd){
     NSLog(@"修改/设置%@的IMP",NSStringFromSelector(_cmd));
+}
+
+- (void)requestCourseList{
+    [NetworkManager requestWithPath:@"http://api1.schooledu.com.cn/rest/course/getCourseList" params:@{@"page":@(currentpage)} completion:^(NSDictionary *response, NSError *error) {
+        if (error) {
+            
+        }else{
+            NSArray *datas = response[@"data"];
+            for (NSDictionary *dict in datas){
+                CourseModel *model = [CourseModel modelWithDict:dict];
+                [courseList addObject:model];
+            }
+            [listTable reloadData];
+            NSLog(@"status :%@ == msg :%@", response[@"status"], response[@"msg"]);
+        }
+    }];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return courseList.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *string = @"CourseCell";
+    CourseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:string];
+    if (cell == nil) {
+        cell = [[CourseTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:string];
+    }
+    [cell updateCellData:courseList[indexPath.row]];
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning {

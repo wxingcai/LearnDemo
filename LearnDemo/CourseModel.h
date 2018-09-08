@@ -15,7 +15,6 @@
 @property (nonatomic, copy) NSString *author;
 @property (nonatomic, assign) CGFloat price;
 @property (nonatomic, assign) long buyCount;
-@property (nonatomic, copy) NSString *introduce;
 @property (nonatomic, copy) NSString *cName;
 
 @end

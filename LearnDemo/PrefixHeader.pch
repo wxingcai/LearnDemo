@@ -14,6 +14,7 @@
 #import "Masonry.h"
 #import "NSObject+Model.h"
 #import "UIImageView+WebCache.h"
+#import "NetworkManager.h"
 
 #endif
 

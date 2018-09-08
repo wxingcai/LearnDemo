@@ -12,12 +12,8 @@
 
 typedef int(^MyBlock)(int, int);
 
-@interface MyViewController ()<UITableViewDataSource>
+@interface MyViewController ()
 {
-    NSInteger currentpage;
-    NSMutableArray *courseList;
-    UITableView *listTable;
-    
     UIScrollView *backScroll;
     UIImageView *imageView;
 }
@@ -32,7 +28,7 @@ typedef int(^MyBlock)(int, int);
     [btn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(26);
         make.left.mas_equalTo(40);
-        make.height.mas_equalTo(80);
+        make.height.mas_equalTo(btn.mas_width).multipliedBy(0.4);
     }];
     [btn addTarget:self action:@selector(press) forControlEvents:UIControlEventTouchUpInside];
     
@@ -41,10 +37,10 @@ typedef int(^MyBlock)(int, int);
     [backScroll addSubview:view];
     
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(btn.mas_top);
+        make.top.mas_equalTo(26);
         make.left.mas_equalTo(btn.mas_right).offset(10);
         make.right.mas_equalTo(-40);
-        make.height.mas_equalTo(80);
+        make.height.mas_equalTo(btn.mas_height);
         make.width.mas_equalTo(btn.mas_width);
     
     }];
@@ -63,13 +59,14 @@ typedef int(^MyBlock)(int, int);
 
 - (void)viewWillLayoutSubviews{
     
-    CGRect rectframe = CGRectMake(0, 0, self.view.bounds.size.width - 80, self.view.bounds.size.height - 206);
-    if (imageView.bounds.size.height) {
-        rectframe = CGRectMake(0, 0, self.view.bounds.size.width - 80, imageView.bounds.size.height);
-    }
+    UIImage *image = [UIImage imageNamed:@"4xGlmmQNGM.jpg"];
+    CGSize imageSize = image.size;
+    CGFloat imgWidth = self.view.bounds.size.width - 80;
+    CGFloat imgHeight = (NSInteger)(imageSize.height/imageSize.width*imgWidth);
+    CGRect rectframe = CGRectMake(0, 0, imgWidth, imgHeight);
+
     UIGraphicsBeginImageContextWithOptions(rectframe.size, NO, 1.0);
     [[UIBezierPath bezierPathWithRoundedRect:rectframe cornerRadius:12] addClip];
-    UIImage *image = [UIImage imageNamed:@"696543.jpeg"];
     [image drawInRect:rectframe];
     imageView.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -92,7 +89,6 @@ typedef int(^MyBlock)(int, int);
     }];
     [self createUI];
     
-    currentpage = 1;
     /*NSLog(@"1");
     dispatch_sync(dispatch_get_main_queue(), ^{
         NSLog(@"2");

@@ -19,7 +19,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         _imgView = [[UIImageView alloc]init];
-        _imgView.backgroundColor = [UIColor grayColor];
+        _imgView.backgroundColor = [[UIColor lightGrayColor]colorWithAlphaComponent:0.2];
         [self.contentView addSubview:_imgView];
         [_imgView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).with.offset(8);
@@ -41,7 +41,7 @@
         }];
         
         UIView *lineView = [[UIView alloc]init];
-        lineView.backgroundColor = [[UIColor lightGrayColor]colorWithAlphaComponent:0.4];
+        lineView.backgroundColor = [[UIColor lightGrayColor]colorWithAlphaComponent:0.3];
         [self.contentView addSubview:lineView];
         
         [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -57,7 +57,7 @@
 - (void)updateCellData:(CourseModel *)courseModel{
     
     NSString *imageName = [NSString stringWithFormat:@"http://file.schooledu.com.cn/static/%@", courseModel.image];
-    [_imgView  sd_setImageWithURL:[NSURL URLWithString:imageName]];
+    [_imgView sd_setImageWithURL:[NSURL URLWithString:imageName]];
     
     _titleLbl.text = courseModel.cName;
 }

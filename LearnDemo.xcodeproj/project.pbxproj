@@ -22,6 +22,8 @@
 		1161BE96213D15BB00B06559 /* CourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1161BE95213D15BB00B06559 /* CourseModel.m */; };
 		1161BE99213D246E00B06559 /* CourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1161BE98213D246E00B06559 /* CourseTableViewCell.m */; };
 		71267602B8C2EFECA891DBB2 /* Pods_LearnDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDB6FB3DA30BBB7615329A /* Pods_LearnDemo.framework */; };
+		916354802142C922001B2297 /* 4xGlmmQNGM.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9163547F2142C90D001B2297 /* 4xGlmmQNGM.jpg */; };
+		9163548321436818001B2297 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9163548221436818001B2297 /* NetworkManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,9 @@
 		139EBADFEBF7404EDC5530AB /* Pods-LearnDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LearnDemo/Pods-LearnDemo.release.xcconfig"; sourceTree = "<group>"; };
 		2C3067E6B6601911FED950D3 /* Pods-LearnDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LearnDemo/Pods-LearnDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		3EDDB6FB3DA30BBB7615329A /* Pods_LearnDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearnDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9163547F2142C90D001B2297 /* 4xGlmmQNGM.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4xGlmmQNGM.jpg; sourceTree = "<group>"; };
+		9163548121436818001B2297 /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		9163548221436818001B2297 /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +149,9 @@
 				114479AF20D2622C00AD86E0 /* Person+AddProperty.m */,
 				11322DCF2040EA3300222061 /* AppDelegate.h */,
 				11322DD02040EA3300222061 /* AppDelegate.m */,
+				9163548121436818001B2297 /* NetworkManager.h */,
+				9163548221436818001B2297 /* NetworkManager.m */,
+				9163547F2142C90D001B2297 /* 4xGlmmQNGM.jpg */,
 				11322E012040EB2A00222061 /* TabBarController.h */,
 				11322E022040EB2A00222061 /* TabBarController.m */,
 				11322DD82040EA3300222061 /* Assets.xcassets */,
@@ -299,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11322DDC2040EA3300222061 /* LaunchScreen.storyboard in Resources */,
+				916354802142C922001B2297 /* 4xGlmmQNGM.jpg in Resources */,
 				11322DD92040EA3300222061 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +377,7 @@
 				1161BE99213D246E00B06559 /* CourseTableViewCell.m in Sources */,
 				11322E092040EB9400222061 /* MyViewController.m in Sources */,
 				114479AD20D25F0F00AD86E0 /* Person.m in Sources */,
+				9163548321436818001B2297 /* NetworkManager.m in Sources */,
 				1161BE96213D15BB00B06559 /* CourseModel.m in Sources */,
 				11322E032040EB2A00222061 /* TabBarController.m in Sources */,
 				11322DDF2040EA3300222061 /* main.m in Sources */,
